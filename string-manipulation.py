@@ -24,17 +24,18 @@
 
 
 # * 082
-# * Show the user a line of text from your favourite poem and ask for a starting and ending point. Display the characters between those two points.
+# * Show the user a line of text from your favourite poem and ask for a starting and ending
+# * point. Display the characters between those two points.
 # poem = "The wanderer, blown off course time and again"
 # print(poem)
 # startPoint = int(input("choose a starting number: "))
 # endPoint = int(input("choose an ending number: "))
-# for i in range(startPoint, endPoint):
-#     print(poem[i])
+# print(poem[startPoint:endPoint])
 
 
 # * 083
-# * Ask the user to type in a word in upper case. If they type it in lower case, ask them to try again. Keep repeating this until they type in a message all in uppercase.
+# * Ask the user to type in a word in upper case. If they type it in lower case, ask them to
+# * try again. Keep repeating this until they type in a message all in uppercase.
 # isUpper = False
 # while isUpper != True:
 #     upperCaseInput = input("Enter a word in upper case ")
@@ -48,7 +49,7 @@
 # * 084
 # * Ask the user to type in their postcode. Display the first two letters in uppercase.
 # postCode = input("Please enter your postcode ")
-# print(postCode[0] + postCode[1])
+# print(postCode[0:2].upper())
 
 # * 085
 # * Ask the user to type in their name and then tell them how many vowels are in their name.
@@ -62,7 +63,9 @@
 
 
 # * 086
-# * Ask the user to enter a new password. Ask them to enter it again. If the two passwords match, display "Thank you". If the letters are correct but in the wrong case, display the message "They must be in the same case" otherwise display the message "Incorrect".
+# * Ask the user to enter a new password. Ask them to enter it again. If the two passwords match,
+# * display "Thank you". If the letters are correct but in the wrong case, display the message
+# * "They must be in the same case" otherwise display the message "Incorrect".
 # password1 = input("Enter your password: ")
 # password2 = input("Reenter your password: ")
 # if password1 == password2:
@@ -83,7 +86,8 @@
 
 
 # * 087
-# * Ask the user to type in a word and then display it backwards on separate lines. For instance, if they type in "Hello" it should display as shown below:
+# * Ask the user to type in a word and then display it backwards on separate lines. For instance,
+# * if they type in "Hello" it should display as shown below:
 # * Enter a word: Hello
 # * 1
 # * 1
