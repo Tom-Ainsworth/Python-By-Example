@@ -18,20 +18,23 @@
 
 # * 071 Create a list of two sports. Ask the user what their favourite sport
 # * is and add this to the end of the list. Sort the list and display it.
-# sports = ['football', 'tennis']
-# choice = input('Choose a sport: ')
-# sports.append(choice)
-# print(sorted(sports))
+# sports = ["football", "tennis"]
+# sports.append(input("Choose a sport: "))
+# sports.sort()
+# print(sports)
 
 
 # * 072 Create a list of six school subjects. Ask the user which of these
 # * subjects they don't like. Delete the subject they have chosen from the
 # * list before you display the list again.
-# subjects = ['maths', 'science', 'english', 'drama', 'art', 'music']
-# print(subjects)
-# choice = input('Which subject do you like the least? ')
-# subjects.remove(choice)
-# print(subjects)
+subjects = ["maths", "science", "english", "drama", "art", "music"]
+print(subjects)
+choice = input("Which subject do you like the least? ")
+getRid = subjects.index(choice)
+#! del is quicker than .remove() as it simply deletes the given index. remove()
+#! searches for the value and then removes the index equal to that value
+del subjects[getRid]
+print(subjects)
 
 
 # * 073 Ask the user to enter four of their favourite foods and store them
@@ -107,9 +110,14 @@
 # * them on separate lines. Ask the user to enter another show and a position
 # * they want it inserted into the list. Display the list again, showing all
 # * five TV programmes in their new positions.
-programs = ["breaking bad", "hunters", "SNT", "the news"]
-for i in range(len(programs)):
-    print(i + "\n")
+# programs = ["breaking bad", "hunters", "SNT", "the news"]
+# for i in programs:
+#     print(i)
+# newShow = input("Enter another program: ")
+# newIndex = int(input("Which index should we add it to? "))
+# programs.insert(newIndex, newShow)
+# for i in programs:
+#     print(i)
 
 
 # * 079 Create an empty list called "nums" Ask the user to enter numbers. After
@@ -117,3 +125,11 @@ for i in range(len(programs)):
 # * list. Once they have entered three numbers, ask them if they still want the
 # * last number they entered saved. If they say "no", remove the last item from
 # * the list. Display the list of numbers.
+# nums = []
+# for i in range(0, 3):
+#     newNum = int(input("Enter a number: "))
+#     nums.append(newNum)
+# saveLastNum = input("Do you want to save the last number you entered? (yes/no): ")
+# if saveLastNum == "no":
+#     nums.remove(nums[-1])
+# print(nums)
