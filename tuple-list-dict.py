@@ -94,19 +94,22 @@
 # * they still want that person to come to the party. If theyanswer "no",
 # * delete that entry from the list and display the list again. You are over
 # * halfway there. Keep going, you have already learnt so much.
-guest_list = []
-for i in range(0, 3):
-    name = input("Enter a name: ")
-    guest_list.append(name)
-print(guest_list)
-choice = input("Choose a name from the list: ")
-print(f"{choice} is at index: {guest_list.index(choice)}")
+# guest_list = []
+# for i in range(0, 3):
+#     name = input("Enter a name: ")
+#     guest_list.append(name)
+# print(guest_list)
+# choice = input("Choose a name from the list: ")
+# print(f"{choice} is at index: {guest_list.index(choice)}")
 
 
 # * 078 Create a list containing the titles of four TV programmes and display
 # * them on separate lines. Ask the user to enter another show and a position
 # * they want it inserted into the list. Display the list again, showing all
 # * five TV programmes in their new positions.
+programs = ["breaking bad", "hunters", "SNT", "the news"]
+for i in range(len(programs)):
+    print(i + "\n")
 
 
 # * 079 Create an empty list called "nums" Ask the user to enter numbers. After
