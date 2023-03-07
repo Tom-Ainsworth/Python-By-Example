@@ -25,7 +25,7 @@ import csv
 # * Using the Books.csv file from program 111, ask the user to enter another record and add it to the end of the file. Display each row of the .csv file on a separate line.
 # file = open("Books.csv", "a")
 # newRecord = input("Enter a new record (eg: book name, author, published date): ").title()
-# file.write(str(newRecord))
+# file.write(str(newRecord + ","))
 # file.close()
 # file = open("Books.csv", "r")
 # print(file.read())
@@ -57,13 +57,65 @@ import csv
 
 # * 114
 # * Using the Books.cs file, ask the user to enter a starting year and an end year. Display all books released between those two years.
+# startQuery = int(input("Enter a starting year to search from: "))
+# endQuery = int(input("Enter a ending year to search from: "))
+# file = list(csv.reader(open("Books.csv")))
+# tempList = []
+# for row in file:
+#     tempList.append(row)
+# for i in tempList:
+#     if startQuery <= int(i[2]) <= endQuery:
+#         print(i)
+
 
 # * 115
-# * Using the Books.csv file, display the data in the file along with the row number of each.
+# * todo Using the Books.csv file, display the data in the file along with the row number of each.
+# file = csv.reader(open("Books.csv"))
+# tempList = []
+# for row in file:
+#     print(f"Index: {file.line_num}, book: {row}")
+
 
 # * 116
 # * Import the data from the Books.cv file into a list. Display the list to the user. Ask them to select which row from the list they want to delete and remove it from the list. Ask the user which data they want to change and allow them to change it.
 # * Write the data back to the original cv file, overwriting the existing data with the amended data.
+# open file, copy data to a new list row by row
+file = list(csv.reader(open("Books.csv")))
+bookList = []
+for row in file:
+    bookList.append(row)
 
-# * 117
-# * Create a simple maths quiz that will ask the user for their name and then generate two random questions. Store their name, the questions they were asked, their answers and their final score in a cv file. Whenever the program is run it should add to the .csv file and not overwrite anything.
+
+for row in bookList:
+    print(f"{bookList.index(row)}, {row}")
+
+# Ask for user input within list length bounds
+# delete selected book by index from list
+choice = int(input("Choose an index number to delete a book from the list: "))
+while choice < 0 or choice > len(bookList):
+    choice = int(input("That index is out of range, please try again: "))
+print(f"Deleting {bookList[choice]}...")
+del bookList[choice]
+
+for row in bookList:
+    print(f"{bookList.index(row)}, {row}")
+
+# Get user input to alter a book
+alteration = int(input("Which entry would you like to alter? "))
+for i in bookList[alteration]:
+    print(f"{bookList[alteration].index(i)}, {i}")
+
+# Get user input for which field to change eg title, autor, date
+alterationPart = int(input("Which part would you like to alter? "))
+newData = input("Write your new change: ")
+bookList[alteration][alterationPart] = newData
+print(bookList[alteration])
+
+# After amendments, write new data back to csv file and save/close
+file = open("Books.csv", "w")
+x = 0
+for row in bookList:
+    newRecord = bookList[x][0] + "," + bookList[x][1] + "," + bookList[x][2] + "\n"
+    file.write(newRecord)
+    x += 1
+file.close()
